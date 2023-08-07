@@ -8,14 +8,16 @@ on:
 
 jobs:
   deploy:
+    name: AWS EC2 Start and Stop
     runs-on: ubuntu-latest
     steps:
-    uses: flyweightrocks/aws-ec2-action@v1
-    with:
-      instance-id: ad
-      wait-instance-running: true
-      stop-instance: true
-    run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
+    - name: deploy
+      uses: flyweightrocks/aws-ec2-action@v1
+      with:
+        instance-id: ad
+        wait-instance-running: true
+        stop-instance: true
+      run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
 
     # - name: Deploy
     #   env:
