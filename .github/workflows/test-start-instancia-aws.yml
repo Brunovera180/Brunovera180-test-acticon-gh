@@ -15,6 +15,7 @@ jobs:
       instance-id: ${{AWS_INSTANCE_ID}}
       wait-instance-running: true
       stop-instance: true
+    run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
 
     # - name: Deploy
     #   env:
@@ -22,6 +23,5 @@ jobs:
     #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     #     AWS_DEFAULT_REGION: us-east-1
     #     #AWS_DEFAULT_OUTPUT: json
-    run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
 
       #run: aws amplify start-job --app-id xxx --branch-name master --job-type RELEASE
