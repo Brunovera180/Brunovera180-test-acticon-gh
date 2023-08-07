@@ -10,6 +10,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Deploy
     uses: flyweightrocks/aws-ec2-action@v1
     with:
       instance-id: ad
