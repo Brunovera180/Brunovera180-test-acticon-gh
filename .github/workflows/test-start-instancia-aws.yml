@@ -12,7 +12,7 @@ jobs:
     steps:
     uses: flyweightrocks/aws-ec2-action@v1
     with:
-      instance-id: ${{AWS_INSTANCE_ID}}
+      instance-id: ad
       wait-instance-running: true
       stop-instance: true
     run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
