@@ -17,7 +17,11 @@ jobs:
         instance-id: ad
         wait-instance-running: true
         stop-instance: true
-      run: aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
+      
+    - name: aws start
+      shell: bash
+      run: |
+        aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
 
     # - name: Deploy
     #   env:
