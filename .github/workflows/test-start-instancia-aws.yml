@@ -14,7 +14,7 @@ jobs:
     - name: deploy
       uses: flyweightrocks/aws-ec2-action@v1
       with:
-        instance-id: '${{ secrets.AWS_INSTANCE_ID }}'
+        instance-id: 'i-05ce1aef9de4bff74'
         wait-instance-running: true
         stop-instance: true
       
