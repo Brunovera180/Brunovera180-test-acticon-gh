@@ -14,14 +14,14 @@ jobs:
     - name: deploy
       uses: flyweightrocks/aws-ec2-action@v1
       with:
-        instance-id: ad
+        instance-id: ${{ secrets.AWS_INSTANCE_ID }}
         wait-instance-running: true
         stop-instance: true
       
-    - name: aws start
-      shell: bash
-      run: |
-        aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
+    # - name: aws start
+    #   shell: bash
+    #   run: |
+    #     aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
 
     # - name: Deploy
     #   env:
