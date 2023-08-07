@@ -13,11 +13,11 @@ jobs:
     steps:
 
     - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: arn:aws:iam::618656345723:role/github-oidc-iam-role
-          role-session-name: github-oidc-session
-          aws-region: us-east-1
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::618656345723:role/github-oidc-iam-role
+        role-session-name: github-oidc-session
+        aws-region: us-east-1
 
     - name: deploy
       uses: flyweightrocks/aws-ec2-action@v1
