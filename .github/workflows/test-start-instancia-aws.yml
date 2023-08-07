@@ -11,6 +11,9 @@ jobs:
     name: AWS EC2 Start and Stop
     runs-on: ubuntu-latest
     steps:
+
+
+    
     - name: deploy
       uses: flyweightrocks/aws-ec2-action@v1
       with:
