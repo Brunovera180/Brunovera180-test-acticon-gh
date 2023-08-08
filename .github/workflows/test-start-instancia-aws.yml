@@ -17,7 +17,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::618656345723:role/github-oidc-iam-role
-          role-session-name: github-oidc-session-name
+          role-session-name: github-oidc-sessions
           aws-region: us-east-1 
 
       - name: Run AWS CLI command
