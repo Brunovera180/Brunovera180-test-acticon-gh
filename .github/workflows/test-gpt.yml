@@ -3,7 +3,7 @@ name: test for chatgpt
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   your-job-name:
