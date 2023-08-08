@@ -30,3 +30,6 @@ jobs:
       - name: aws start
         run: |
           aws ec2 start-instances --instance-ids i-05ce1aef9de4bff74
+          aws ec2 wait instance-status-ok --instance-ids
+          echo 'Waiting for server to start...'
+          echo 'Fin'
