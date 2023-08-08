@@ -20,4 +20,4 @@ jobs:
 
       - name: Run AWS CLI command
         run: |
-          aws ec2 start-instances --instance-ids ${{ AWS_INSTANCE_ID }}
+          aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
