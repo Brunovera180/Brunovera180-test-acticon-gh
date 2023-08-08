@@ -29,4 +29,4 @@ jobs:
    - name: aws start
      shell: bash
      run: |
-       aws ec2 start-instances --instance-ids ${{ secrets.AWS_INSTANCE_ID }}
+       aws ec2 start-instances --instance-ids i-05ce1aef9de4bff74
