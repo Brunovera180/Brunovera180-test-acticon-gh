@@ -1,31 +1,29 @@
-name: Push-to-EC2
+name: AWS Action with OIDC
 
-# Trigger deployment only on push to master branch
 on:
   push:
     branches:
       - main
 
 jobs:
-  deploy:
-    name: AWS EC2 Start and Stop
+  aws-job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: configure aws credentials
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:iam::618656345723:role/github-oidc-iam-role
           role-session-name: github-oidc-session
-          aws-region: us-east-1
 
-    # - name: deploy
-    #   uses: flyweightrocks/aws-ec2-action@v1
-    #   with:
-    #     instance-id: 'i-05ce1aef9de4bff74'
-    #     wait-instance-running: false
-    #     stop-instance: false
-      
-      - name: aws start
-        shell: bash
+      - name: Run AWS CLI command
         run: |
-          aws ec2 start-instances --instance-ids i-05ce1aef9de4bff74
+          aws s3 ls  # Ejemplo de un comando AWS
+
+      
+      # - name: aws start
+      #   run: |
+      #     aws ec2 start-instances --instance-ids i-05ce1aef9de4bff74
