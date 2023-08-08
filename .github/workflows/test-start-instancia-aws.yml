@@ -11,13 +11,12 @@ jobs:
     name: AWS EC2 Start and Stop
     runs-on: ubuntu-latest
     steps:
-
-    - name: configure aws credentials
-      uses: aws-actions/configure-aws-credentials@v2
-      with:
-        role-to-assume: arn:aws:iam::618656345723:role/github-oidc-iam-role
-        role-session-name: github-oidc-session
-        aws-region: us-east-1
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::618656345723:role/github-oidc-iam-role
+          role-session-name: github-oidc-session
+          aws-region: us-east-1
 
     # - name: deploy
     #   uses: flyweightrocks/aws-ec2-action@v1
@@ -26,7 +25,7 @@ jobs:
     #     wait-instance-running: false
     #     stop-instance: false
       
-   - name: aws start
-     shell: bash
-     run: |
-       aws ec2 start-instances --instance-ids i-05ce1aef9de4bff74
+      - name: aws start
+        shell: bash
+        run: |
+          aws ec2 start-instances --instance-ids i-05ce1aef9de4bff74
