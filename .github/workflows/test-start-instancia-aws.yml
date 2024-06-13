@@ -1,9 +1,11 @@
 name: AWS Action with OIDC
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch: 
+
 
 jobs:
   aws-job:
