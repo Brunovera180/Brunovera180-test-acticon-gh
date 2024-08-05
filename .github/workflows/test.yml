@@ -1,7 +1,6 @@
 name: Do things every 5 minutes
 on:
-  schedule:
-    - cron: "*/2 * * * *"
+  workflow_dispatch:
 
 jobs:
   say_hello:
