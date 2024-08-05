@@ -1,0 +1,12 @@
+name: Hello World Schedule
+
+on: 
+  schedule:
+    - cron: '59 17 * * *'  # 14:45 UTC-3 -> 17:45 UTC
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print Hello World
+      run: echo "Hola Mundo"
