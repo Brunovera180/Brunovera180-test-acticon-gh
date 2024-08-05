@@ -1,8 +1,9 @@
 name: Hello World Schedule
 
-on: 
+name: "example-cron-action"
+on:
   schedule:
-    - cron: '59 17 * * *'  # 14:45 UTC-3 -> 17:45 UTC
+    - cron:  '*/15 * * * *'    # At every 15th minute
 
 jobs:
   say_hello:
