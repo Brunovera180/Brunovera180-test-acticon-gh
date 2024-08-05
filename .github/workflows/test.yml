@@ -1,9 +1,8 @@
-name: Do things every minute
+name: Do things every five minutes
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  "* * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   say_hello:
