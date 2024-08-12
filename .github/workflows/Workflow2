@@ -1,7 +1,10 @@
 name: Workflow 2
 
 on:
-  workflow_dispatch: 
+  workflow_run:
+    workflows: ["Workflow 1"]  # Se activa solo cuando "Workflow 1" termina
+    types:
+      - completed
 
 jobs:
   deploy:
