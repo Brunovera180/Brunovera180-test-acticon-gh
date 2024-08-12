@@ -1,0 +1,26 @@
+name: Workflow 1
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run your first action
+      run: |
+        # Tu lógica aquí
+        echo "Primera acción ejecutada con éxito"
+
+    - name: Save artifact for next workflow
+      if: success()
+      run: |
+        echo "success" > status.txt
+      # Guardar el archivo como un artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: workflow-1-status
+        path: status.txt
