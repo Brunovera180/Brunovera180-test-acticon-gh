@@ -5,15 +5,17 @@ on:
 
 jobs:
   build:
+    name: First Job
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Run your first action
+    - name: Run first action
       run: |
-        # Tu lógica aquí
-        echo "Primera acción ejecutada con éxito"
+        echo "First job: Hello from job 1!"
+        # Simular éxito
+        echo "Job 1 completed successfully"
 
     - name: Save artifact for next workflow
       if: success()
