@@ -1,7 +1,7 @@
 name: Workflow 1
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:  # Permite que se inicie manualmente desde la interfaz de GitHub Actions
 
 jobs:
   build:
@@ -19,9 +19,10 @@ jobs:
 
     - name: Save artifact for next workflow
       if: success()
-      run: |
-        echo "success" > status.txt
-      # Guardar el archivo como un artifact
+      run: echo "success" > status.txt
+      
+    - name: Upload artifact
+      if: success()
       uses: actions/upload-artifact@v2
       with:
         name: workflow-1-status
