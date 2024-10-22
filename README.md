@@ -17,8 +17,8 @@ Para acceder a tu clúster de EKS con kubectl, debes actualizar el archivo kubec
 aws eks --region <region> update-kubeconfig --name <cluster-name>
 ```
 
-Comandos para la Administración de EKS
-1. Ver información sobre el clúster
+## Comandos para la Administración de EKS
+### Ver información sobre el clúster
 Listar todos los clústeres EKS:
 ```bash
 eksctl get cluster
@@ -34,7 +34,7 @@ Obtener detalles de un nodo del clúster:
 kubectl describe nodes
 ```
 
-2. Crear y eliminar clústeres
+### Crear y eliminar clústeres
 Crear un clúster usando un archivo YAML:
 ```bash
 eksctl create cluster -f <cluster-config.yaml>
@@ -45,7 +45,7 @@ Eliminar un clúster:
 eksctl delete cluster --name <cluster-name>
 ```
 
-3. Administración de grupos de nodos (Node Groups)
+### Administración de grupos de nodos (Node Groups)
 Listar los grupos de nodos del clúster:
 ```bash
 eksctl get nodegroup --cluster <cluster-name>
@@ -61,7 +61,7 @@ Eliminar un grupo de nodos:
 eksctl delete nodegroup --cluster <cluster-name> --name <nodegroup-name>
 ```
 
-4. Actualizar clústeres y nodos
+### Actualizar clústeres y nodos
 Actualizar la versión de Kubernetes en el clúster:
 ```bash
 eksctl upgrade cluster --name <cluster-name> --approve
@@ -71,7 +71,7 @@ Actualizar un grupo de nodos a una nueva versión de Kubernetes:
 eksctl upgrade nodegroup --cluster <cluster-name> --name <nodegroup-name>
 ```
 
-5. Administración de pods y recursos de Kubernetes
+### Administración de pods y recursos de Kubernetes
 Listar todos los pods en un namespace:
 ```bash
 kubectl get pods -n <namespace>
@@ -97,7 +97,7 @@ Escalar un deployment:
 kubectl scale deployment <deployment-name> --replicas=<número-replicas> -n <namespace>
 ```
 
-6. Manejo de logs
+### Manejo de logs
 Ver los logs de un pod específico:
 ```bash
 kubectl logs <pod-name> -n <namespace>
@@ -108,7 +108,7 @@ Ver los logs en tiempo real de un pod:
 kubectl logs -f <pod-name> -n <namespace>
 ```
 
-7. Monitoreo y métricas
+### Monitoreo y métricas
 Ver las métricas de los pods:
 ```bash
 kubectl top pods -n <namespace>
@@ -119,7 +119,7 @@ Ver las métricas de los nodos:
 kubectl top nodes
 ```
 
-8. Gestionar accesos (RBAC)
+### Gestionar accesos (RBAC)
 Ver los roles disponibles:
 ```bash
 kubectl get roles -n <namespace>
@@ -130,7 +130,7 @@ Asignar un rol a un usuario o grupo:
 kubectl create rolebinding <binding-name> --role=<role-name> --user=<user-name> -n <namespace>
 ```
 
-9. Eliminar recursos
+### Eliminar recursos
 Eliminar un deployment:
 ```bash
 kubectl delete deployment <deployment-name> -n <namespace>
